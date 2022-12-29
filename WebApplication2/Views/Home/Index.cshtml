@@ -1,0 +1,15 @@
+﻿@using WebApplication2.Models;
+@model IndexViewModel
+
+<h1>news</h1>
+
+@foreach (var item in Model.News) {    
+    <div>@item.News</div>
+    <div>Источник: @item.Source</div>
+    <div>Тематика: @item.Theme</div>
+    <hr>
+}
+
+@for (var i = 1; i <= Model.PageInfo.PageSize; i ++) {
+    <a href="/?page=@i">@i</a>
+}
